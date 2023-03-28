@@ -1,0 +1,3 @@
+﻿
+
+Employe employee = new Employe()
