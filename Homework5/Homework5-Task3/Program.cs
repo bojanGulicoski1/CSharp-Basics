@@ -3,7 +3,7 @@
 Customer customer1 = new Customer()
 {
     FullName = "Bojan Gulicoski",
-    CardNumber = "1234",
+    CardNumber = "1234-1234-1234-1234",
     Pin = "0000",
     Balance = 5000
 
@@ -34,12 +34,12 @@ BankUsers.Add(customer3);
 
 
 Console.WriteLine("Welcome to the ATM app");
-Console.WriteLine("If you have accaount press Y");
-Console.WriteLine( "IFyou want to register press R");
+Console.WriteLine("If you have account press Y");
+Console.WriteLine("If you want to register press R");
 string firstUserChoise = Console.ReadLine();
 
 if(firstUserChoise.ToUpper() == "Y") { 
-    Console.WriteLine("Please enter your card number: ");
+    Console.WriteLine("Please enter your Card number: ");
     string userCardNumber = Console.ReadLine();
     Console.WriteLine("Please enter your Pin code: ");
     string userPinCode = Console.ReadLine();
@@ -64,8 +64,15 @@ if (bankCustomers != null)
         {
             Console.WriteLine($"How much money you want to withdrawal?-Avalivable {bankCustomers.Balance}");
             int cashWithdrawaled = Convert.ToInt32(Console.ReadLine());
-            bankCustomers.CashWithdrawl(cashWithdrawaled);
-            Console.WriteLine($"You have withdrawaled {cashWithdrawaled} and left {bankCustomers.Balance}");
+                if (cashWithdrawaled > bankCustomers.Balance)
+                {
+                    Console.WriteLine("Not enought money");
+                }
+                else
+                {
+                    bankCustomers.CashWithdrawl(cashWithdrawaled);
+                    Console.WriteLine($"You have withdrawaled {cashWithdrawaled} and left {bankCustomers.Balance}");
+                }
         }
         else if (userChoise == "3")
         {
