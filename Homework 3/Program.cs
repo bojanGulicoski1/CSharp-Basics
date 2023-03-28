@@ -22,6 +22,10 @@ Console.WriteLine ("Please enter first number");
 int userInput1 = Convert.ToInt32 (Console.ReadLine());
 Console.WriteLine("Please enter second number");
 int userInput2 = Convert.ToInt32(Console.ReadLine());
+if(userInput1==0 || userInput2 == 0 && operation == '/')
+{
+    Console.WriteLine("You cant divide with 0! ");
+}
 
 
 int finalResult(int num1, int num2)

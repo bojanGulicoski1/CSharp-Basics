@@ -37,7 +37,7 @@ string[] studentsG2 = { "Igor", "Bojan", "Darko", "Zivko", "Ivan" };
 
 Console.WriteLine("Enter Student group:(There are 1 and 2)");
 
-int userChoice  = Convert.ToInt32(Console.ReadLine());
+int userChoice = Convert.ToInt32(Console.ReadLine());
 
 if (userChoice == 1)
 {
@@ -45,11 +45,17 @@ if (userChoice == 1)
     {
         Console.WriteLine(student);
     }
-}else if (userChoice == 2)
+}
+else if (userChoice == 2)
 {
     foreach (string student in studentsG2)
     {
         Console.WriteLine(student);
     }
+
+}
+else
+{
+    Console.WriteLine("PLease enter 1 or 2");
 }
 
