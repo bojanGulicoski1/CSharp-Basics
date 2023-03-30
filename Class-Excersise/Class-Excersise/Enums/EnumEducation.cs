@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Enum
+namespace Class_Excersise.Enums
 {
-    public enum RoleEnum
+    public enum EnumEducation
     {
-        Sales = 1,
-        Manager,
-        Other
+        Highschool,
+        Bachelor,
+        Master,
+        Doctor
     }
 }
