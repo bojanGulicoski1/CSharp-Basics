@@ -8,26 +8,30 @@ namespace Class_Excersise.CLasses
 {
     public class Client
     {
-        public string Address { get; set; }
+        public string Adress { get; set; }
         public string City { get; set; }
         public string State { get; set; }
         public string Phone { get; set; }
         public string Mobile { get; set; }
         public string Email { get; set; }
 
-        public string EmailCheek(string email)
+        public bool EmailCheek()
         {
-            if (!email.Contains("@") && !email.Contains(".com"))
+            if (!Email.Contains("@") && !Email.Contains(".com"))
             {
                 Console.WriteLine("Email must Contain $ and .com");
-            }return email;
-        }
-        public string PhoneCheek(string number)
-        {
-            if (!number.StartsWith("07")){
-                Console.WriteLine("Phone number must starts with 07");
+                return false;
             }
-            return number;
+            return true;
+        }
+        public bool PhoneCheek()
+        {
+            if (!Mobile.StartsWith("07"))
+            {
+                Console.WriteLine("Phone number must starts with 07");
+                 return true;
+            }
+            return false;
         }
     }
 }

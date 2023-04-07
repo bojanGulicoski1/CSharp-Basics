@@ -9,6 +9,7 @@ namespace Class_Excersise.CLasses
 {
     public class Person : Client
     {
+        public int MontlyVague { get; set; }
         private double _ssn { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -16,64 +17,61 @@ namespace Class_Excersise.CLasses
         public EnumOcupation EnumOcupation { get; set; }
         public EnumEducation EnumEducation { get; set; }
         public EnumBankProducts enumBankProducts { get; set; }
-        public int MontlyVague { get; set; }
         public List<string> ProductsInBank { get; set; } = new List<string>();
-        public bool HasDepositProduct { get; set; }
-        public bool aprovedCandidateForDeposit { get; set; }
+       
+     
         public bool hasDeposit { get; set; }
         public Person()
         {
             _ssn = GenerateSsn();
         }
-        public Person(string firstName, string lastName, int age, int ssn)
+
+        public Person(int montlyVague , int age)
+        {
+            _ssn = GenerateSsn();
+            Age = age;
+
+            if (Age <= 18)
+                EnumOcupation = EnumOcupation.Student;
+            else if (Age > 64)
+                EnumOcupation = EnumOcupation.Retired;
+        }
+
+        public Person(string firstName, string lastName, int age, string mobile, string adress)
         {
             FirstName = firstName;
             LastName = lastName;
             Age = age;
             _ssn = GenerateSsn();
-            Mobile = Mobile;
-            Address = Address;
-            State = State;
-            Phone = Phone;
-            Email = Email;
-            EnumOcupation = EnumOcupation;
-            enumBankProducts = enumBankProducts;
-            MontlyVague = MontlyVague;
+            Mobile = mobile;
+            Adress = adress;
+
 
         }
-        public void CheekAge(int age)
+        public bool CheekAge()
         {
-            if (age < 16)
+            if (Age < 16)
             {
-                Console.WriteLine("Not alowed.Your under 18");
+                Console.WriteLine("Not alowed.Your under 16");
+                return false;
             }
-            else if (age >= 16 && age <= 18)
-            {
-                Console.WriteLine($"{EnumOcupation.Student}");
-            }
-            else if (age > 64)
-            {
-                Console.WriteLine($"{EnumOcupation.Retired}");
-            }
-
+            Console.WriteLine(EnumOcupation);
+            return true;
         }
-        public void LoanCandidates(int mVage, int age, bool hasDeposit)
+
+        public bool IsLoanCandidate()
         {
-            if (mVage > 18000 && age > 25 && age < 60 && hasDeposit == false)
+            if (MontlyVague > 18000 && Age > 25 && Age < 60 && hasDeposit == false)
             {
-                aprovedCandidateForDeposit = true;
+
                 Console.WriteLine("You are alowed to take deposit");
+                return true;
             }
-            else
-            {
-                Console.WriteLine("You are not alowed to take deposit");
-            }
+            Console.WriteLine("You are not alowed to take deposit");
+            return false;
         }
 
-        //public EnumBankProducts GetEnumBankProducts()
-        //{
-        //    return enumBankProducts;
-        //}
+
 
         public double GenerateSsn()
         {

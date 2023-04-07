@@ -9,7 +9,7 @@ namespace Class_Excersise.CLasses
 {
     public class Product
     {
-        public EnumBankProducts enumBankProducts { get; set; }
+        public EnumBankProducts ProductType { get; set; }
 
     }
 }
