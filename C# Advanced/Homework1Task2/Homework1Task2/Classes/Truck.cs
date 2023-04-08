@@ -6,18 +6,6 @@ namespace Homework1Task2.Classes
     public class Truck : Vehicle , ICarWash, IGasPump, IRepairService
     {
 
-        public int CleanPercentage { get; set; }
-
-        public int GasPercentage { get; set; }
-
-        public string TypeOFVehicle { get; set; } = string.Empty;
-
-        public string Model { get; set; } = string.Empty;
-
-        public bool HaveProblem { get; set; }
-
-
-
         public void CarWash()
         {
             if (TypeOFVehicle == "Truck")
