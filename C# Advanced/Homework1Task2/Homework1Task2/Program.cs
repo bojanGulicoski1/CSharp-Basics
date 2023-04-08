@@ -8,16 +8,14 @@ Car myCar = new Car()
     GasPercentage = 100,
     HaveProblem = false
 };
+Console.WriteLine("\n");
 
 myCar.Drive();
-
 myCar.CarWash();
-
 myCar.PumpGas();
-
 myCar.CheckVehicle();
-
 myCar.TruckWash();
+Console.WriteLine("\n");
 
 Truck myTruck = new Truck()
 {

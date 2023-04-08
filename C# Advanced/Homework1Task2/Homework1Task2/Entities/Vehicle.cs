@@ -2,6 +2,11 @@
 {
     public abstract class Vehicle
     {
+        public bool isFullGas;
+
+        public bool isClean;
+
+        public bool  isBroken;
 
 
 

@@ -20,7 +20,7 @@ namespace Homework1Task2.Classes
 
         public void CarWash()
         {
-            bool isClean;
+           
             if (CleanPercentage < 50)
             {
                 isClean = true;
@@ -42,7 +42,7 @@ namespace Homework1Task2.Classes
 
         public void PumpGas()
         {
-            bool isFullGas;
+           
             if (GasPercentage == 100)
             {
                 isFullGas = true;
@@ -78,7 +78,7 @@ namespace Homework1Task2.Classes
 
         public void CheckVehicle()
         {
-            bool isBroken;
+          
             if (HaveProblem)
             {
                 isBroken = true;
