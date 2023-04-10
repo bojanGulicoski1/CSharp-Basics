@@ -2,20 +2,20 @@
 using Validator = Homework2.Classes.Validator;
 
 
-Vehicle car1 = new Vehicle()
+Vehicle boat = new Vehicle()
 {
-    Id = 0,
-    YearOfpProduction = 0,
-    Type = "Car",
+    Id = 2,
+    YearOfpProduction = 2022,
+    Type = "Boat",
     BatchNumber = 2,
 
 };
 
-Vehicle car2 = new Vehicle()
+Vehicle plane = new Vehicle()
 {
-    Id = 1,
+    Id = 0,
     YearOfpProduction = 2023,
-    Type = "Truck",
+    Type = "",
     BatchNumber = 10
 };
 
@@ -30,24 +30,37 @@ Bike bike = new Bike()
 
 Car car = new Car()
 {
-    YearOfpProduction = 2022,
+    YearOfpProduction = 0,
     BatchNumber = 9,
-    Type = "Car",
+    Type = "BMW",
     CountryOfProduction = "France",
     FuelTank = 70,
     Id = 3,
 };
 
 
-
-
+Console.WriteLine("Printing list Vehicles");
+Db.PrintVehicles();
+Console.WriteLine("\n Adding new item o the list");
+Db.Vehicles.Add(plane);
+Console.WriteLine("\n Printing after ading new item t the list Vehicles");
 Db.PrintVehicles();
 Console.WriteLine("\n");
-Validator.Validate(car1);
+
+boat.PrintVehicle();
 Console.WriteLine("\n");
-Validator.Validate(car2);
+
+Validator.Validate(boat);
 Console.WriteLine("\n");
-bike.PrintVehicle(bike.YearOfpProduction, bike.Color);
+
+Validator.Validate(plane);
 Console.WriteLine("\n");
-car.PrintVehicle(car.Type, car.YearOfpProduction);
+
+bike.PrintVehicle();
+Console.WriteLine("\n");
+
+car.PrintVehicle();
+Console.WriteLine("\n");
+
+Validator.Validate(car);
 

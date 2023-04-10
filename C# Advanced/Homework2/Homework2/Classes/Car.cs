@@ -8,9 +8,9 @@
 
 
 
-        public void PrintVehicle(string type, int production)
+        public override void PrintVehicle()
         {
-            Console.WriteLine($"This {type} is producted in {production} year");
+            Console.WriteLine($"This car is {Type} and is produced in {CountryOfProduction}");
         }
     }
 }

@@ -12,11 +12,9 @@
 
 
 
-        public void PrintVehicle()
+        public virtual void PrintVehicle()
         {
-            Console.WriteLine($"{Id} - {Type} - {YearOfpProduction}");
+            Console.WriteLine($"ID: {Id} , Type: {Type} , Year of production: {YearOfpProduction}");
         }
-
-
     }
 }

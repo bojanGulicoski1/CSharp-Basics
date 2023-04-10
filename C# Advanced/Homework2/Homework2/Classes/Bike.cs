@@ -5,10 +5,9 @@
         public string Color { get; set; } = string.Empty;
 
 
-
-        public void PrintVehicle(int production, string color)
+        public override void PrintVehicle()
         {
-            Console.WriteLine($"This bike is producted in {production} -and is {color} color");
+            Console.WriteLine($"This bike is producted in {YearOfpProduction} - and is {Color} color");
         }
     }
 }
