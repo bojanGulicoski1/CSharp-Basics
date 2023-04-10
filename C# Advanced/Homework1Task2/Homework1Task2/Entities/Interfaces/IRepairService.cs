@@ -2,8 +2,8 @@
 {
     public interface IRepairService
     {
-        public void CheckVehicle();
+        public void CheckVehicle(Vehicle vehicle);
 
-        public void FixVehicle();
+        public void FixVehicle(Vehicle vehicle);
     }
 }

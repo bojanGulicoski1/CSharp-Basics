@@ -2,6 +2,6 @@
 {
     public interface IGasPump
     {
-        public void PumpGas();
+        public void PumpGas(Vehicle vehicle);
     }
 }

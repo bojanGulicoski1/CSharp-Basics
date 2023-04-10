@@ -8,14 +8,6 @@ Car myCar = new Car()
     GasPercentage = 100,
     HaveProblem = false
 };
-Console.WriteLine("\n");
-
-myCar.Drive();
-myCar.CarWash();
-myCar.PumpGas();
-myCar.CheckVehicle();
-myCar.TruckWash();
-Console.WriteLine("\n");
 
 Truck myTruck = new Truck()
 {
@@ -26,9 +18,14 @@ Truck myTruck = new Truck()
     HaveProblem = true
 };
 
+CarCenter carCentarStruga = new CarCenter();
 
-myTruck.Drive();
-myTruck.CarWash();
-myTruck.PumpGas();
-myTruck.CheckVehicle();
-myTruck.TruckWash();
+carCentarStruga.MyGasPump.PumpGas(myCar);
+carCentarStruga.MyGasPump.PumpGas(myTruck);
+
+carCentarStruga.MyCarWash.WashCar(myCar);
+carCentarStruga.MyCarWash.WashTruck(myTruck);
+
+
+carCentarStruga.MyRepairService.FixVehicle(myCar);
+carCentarStruga.MyRepairService.CheckVehicle(myTruck);

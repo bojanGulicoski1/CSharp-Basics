@@ -2,31 +2,20 @@
 
 namespace Homework1Task2.Classes
 {
-    public class CarCenter : ICarWash, IRepairService, IGasPump
+    public class CarCenter
     {
-        public void CarWash()
+        public GasPump MyGasPump { get; set; }
+
+        public RepairService MyRepairService { get; set; }
+
+        public CarWash MyCarWash { get; set; }
+
+        public CarCenter()
         {
-            throw new NotImplementedException();
+            MyGasPump = new GasPump();
+            MyRepairService = new RepairService();
+            MyCarWash = new CarWash();
         }
 
-        public void CheckVehicle()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void FixVehicle()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void PumpGas()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void TruckWash()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
