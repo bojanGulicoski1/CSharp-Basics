@@ -9,7 +9,6 @@ namespace HomeworkClass04.Database
         {
             Db = new List<T>();
         }
-
         public static void InsertCar(T entity)
         {
             Db.Add(entity);
@@ -22,7 +21,6 @@ namespace HomeworkClass04.Database
             Console.WriteLine(Db.FirstOrDefault(x => x.Id == id));
             
         }
-
         public static void PrintAll()
         {
             foreach (T item in Db)
