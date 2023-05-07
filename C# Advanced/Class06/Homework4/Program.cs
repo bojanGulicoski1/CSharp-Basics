@@ -22,6 +22,6 @@ List<Person> FrediesDogs = Db.People.Where(x => x.Name == "Freddy").ToList();
 
 FrediesDogs.PrintInfo();
 
-List<Dog> namedDogs = Db.Puppy.Where(x => x.Name == "Cristofer" ).ToList();
+//List<Dog> namedDogs = Db.Puppy.Where(x => x.Name == "Cristofer" ).ToList();
 
-namedDogs.PrintInfo();
+//namedDogs.PrintInfo();
