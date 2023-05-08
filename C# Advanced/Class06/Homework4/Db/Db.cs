@@ -2,9 +2,9 @@
 {
     public static class Db
     {
-        public static List<Person> People;
+        public static List<Person> People { get; set; }
 
-        public static List<Dog> Puppy;
+        public static List<Dog> Puppy { get; set; }
 
         static Db()
         {

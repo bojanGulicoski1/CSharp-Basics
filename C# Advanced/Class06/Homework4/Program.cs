@@ -38,12 +38,12 @@ Nathen.Dogs.First().PrintInfo();
 Console.WriteLine("\n");
 
 Console.WriteLine("Printing white dogs:");
-IEnumerable<string> whiteDogNames = Db.People
+List<string> whiteDogNames = Db.People
            .Where(x => x.Name == "Cristofer" || x.Name == "Freddy" || x.Name == "Erin" || x.Name == "Amelia")
            .SelectMany(x => x.Dogs)
            .Where(x => x.Color == "White")
            .OrderBy(x => x.Name)
-           .Select(x => x.Name);
+           .Select(x => x.Name).ToList();
 
 foreach (string dogName in whiteDogNames)
 {
