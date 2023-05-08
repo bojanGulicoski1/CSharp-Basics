@@ -4,12 +4,12 @@
     {
         public string Color { get; set; }
 
-        public Dog(string name, int age , string color ) : base(name, age)
+        public Dog(string name, int age, string color) : base(name, age)
         {
             Name = name;
             Age = age;
             Color = color;
-          
+
         }
         public override void PrintInfo()
         {

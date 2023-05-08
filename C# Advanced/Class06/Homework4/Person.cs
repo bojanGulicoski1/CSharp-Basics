@@ -4,12 +4,11 @@
     {
         public string Name { get; set; } = string.Empty;
 
-        public int  Age { get; set; }
-
+        public int Age { get; set; }
 
         public List<Dog> Dogs { get; set; }
 
-        public Person(string name , int age )
+        public Person(string name, int age)
         {
             Name = name;
             Age = age;
@@ -23,7 +22,5 @@
         {
             Console.WriteLine($"{Name}  {Age} ");
         }
-
-        
     }
 }
