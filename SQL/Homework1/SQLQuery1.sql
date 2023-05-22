@@ -1,84 +1,71 @@
-CREATE DATABASE TestDatabase
+create database SEDCACADEMYDB
 
-create table dbo.BusinessEntity
-(
+use SEDCACADEMYDB
+create table dbo.Student(
 Id int not null,
-[Name] nvarchar(30)  null,
-Region nvarchar(1000)  null,
-ZipCode nvarchar(10),
-Size nvarchar(10)
+FirstName nvarchar(50) not null ,
+LastName nvarchar (50) not null,
+DateOfBirth date not null,
+EnroledDate datetime not null,
+Gender nchar(1) not null,
+NationalIdNumber int null,
+StudentCardNumber int null
 )
 
 select * 
-from dbo.BusinessEntity
+from Student
 
-create table dbo.Employee
-(
-Id int not null,
-FirstName nvarchar(100) not null,
-LastName nvarchar(100) not null,
-DateOfBirth date  null,
-Gender nchar (1) null,
-HireDate date null,
-NationalNumber nvarchar (20) null
-)
-
-
-select * 
-from dbo.Employee
-
-create table dbo.Product
-(
-Id int not null,
-Code nvarchar(50)  null,
-[Name] nvarchar(100)  null,
-[Description] nvarchar(MAX)  null,
-[Weight] decimal (18 , 2) null,
-Price decimal (18 , 2) null,
-Cost  decimal (18 , 2) null
+create table dbo.Teacher(
+Id int identity (1,1),
+FirstName nvarchar(50),
+LastName nvarchar (50) not null,
+DateOfBirth date not null,
+AcademicRank int null,
+HireDate date null
 )
 
 select * 
-from dbo.Product
+from dbo.Teacher
 
-create table dbo.Customer
-(
-Id int not null,
+create table dbo.Grade(
+Id int identity (1 , 1),
+StudentId int not null,
+CourseId int not null,
+TeacherId int not null,
+Grade int not null,
+Comment nvarchar (MAX) null,
+CreateDate datetime null
+)
+
+select * 
+from dbo.Grade
+
+create table dbo.Course(
+Id int identity (1 ,1 ),
 [Name] nvarchar(100) not null,
-AccountNumber nvarchar(50) null,
-City nvarchar(100) null,
-RegionName nvarchar(100) null,
-CustomerSize nvarchar(10) null,
-PhoneNumber nvarchar(20) null,
-IsActive bit not null
+[Credit] int not null,
+AcademicYear int not null,
+Semester smallint not null
 )
 
-select * 
-from dbo.Customer
+select *
+from dbo.Course
 
-create table dbo.Orders
-(
-Id bigint not null,
-OrderDate datetime   null,
-[Status] smallint null,
-BusinessEntityId int  null,
-CustomerId int null,
-EmployeeId int null,
-TottalPrice decimal (18 ,2 ) null,
-Comment nvarchar (MAX)  null
+create table dbo.GradeDetails(
+Id int identity(1,1),
+GradeId int not null,
+AchivementTypeId int not null,
+AchivementPoints int not null,
+AchivementMaxPoints int not null,
+AchivementDate datetime null
 )
 
-select * 
-from dbo.Orders
+select *
+from dbo.GradeDetails
 
-create table dbo.OrderDetails
-(
-Id bigint not null,
-OrderId bigint   null,
-ProductId int null,
-Quantity int  null,
-Price decimal(18 , 2) null,
+create table dbo.AchivementType(
+Id int identity(1,1),
+[Name] nvarchar(50) not null,
+[Description] nvarchar(MAX) null,
+PArticipationRate int null
 )
-
-select * 
-from dbo.Orders
